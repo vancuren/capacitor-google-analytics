@@ -19,6 +19,13 @@ export class CapacitorGoogleAnalyticsWeb extends WebPlugin implements CapacitorG
     console.log('ECHO', options);
     return options;
   }
+  
+  async initializeApp(config: any): Promise<{value: string}> {
+    firebase.initializeApp(config);
+    const value = 'isEnabled';
+    return Promise.resolve({value: value});
+  }
+  
 
   logEvent(options: { name: string, parameters: any}) {    
     if (options.name) {

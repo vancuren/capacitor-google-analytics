@@ -49,23 +49,27 @@ To get started visit https://analytics.google.com.
     ```
     classpath 'com.google.gms:google-services:4.2.0'
     ```
-11. In the App level build.gradle add the following to dependencies
+11. a) In the App level build.gradle add the following to dependencies
     ```
     implementation 'com.google.firebase:firebase-core:17.0.0'
     ```
-12. In the same file add the following to the bottom of the file.
-    ```
-    apply plugin: 'com.google.gms.google-services'
-    ```
-13. Sync Project
 
-* Ionic 4 notes. If you're using Ionic 4 change the following snippets above to the following
-
-11. In the App level build.gradle add the following to dependencies note the version change.
+11. b) Ionic 4 notes. If you're using Ionic 4 change the snippets versions to:
     ```
     implementation 'com.google.firebase:firebase-core:16.0.7'
     implementation 'com.google.firebase:firebase-analytics:16.3.0'
     ```
+
+12. In the same file add the following to the bottom of the file.
+    ```
+    apply plugin: 'com.google.gms.google-services'
+    ```
+
+13. Sync Project
+
+14. Run `npm i capacitor-google-analytics`
+
+15. Add `import { CapacitorGoogleAnalytics } from 'capacitor-google-analytics';` to the components or service you want to expose the plugin too.
 
 
 ### iOS Setup
@@ -142,3 +146,10 @@ Parameters
   ```javascript
   resetAnalyticsData(): Promise<void>;
   ```
+
+  ## Demo
+
+  1. Located in the demo/ directory.
+  2. `cd ./demo`
+  3. `ionic serve`
+
