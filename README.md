@@ -70,51 +70,56 @@ ETA 10/29/2019
 
 ## Usage
 
-  logEvent()
-  params
-    options: {
-        name: string;
-        parameters: object;
-    }
+ *logEvent()*
+
+    | key        | value  |
+    |------------|--------|
+    | name       | string |
+    | parameters | object |
+
   ```
   logEvent(options: { name: string, parameters: object }): Promise<void>;
   ```
   
-  setUserProperty()
-  params
-    options: {
-        name: string;
-        value: string;
-    }  
+  *setUserProperty()*
+
+    | key   | value  |
+    |-------|--------|
+    | name  | string |
+    | value | string |
+
   ```
   setUserProperty(options: { value: string, name: string }): Promise<void>;
   ```
   
-  setUserId()
-  params
-    options: {
-        userId: string;
-    }
+  *setUserId()*
+
+    | key    | value  |
+    |--------|--------|
+    | userId | string |
+
   ```
   setUserId(options: { userId: string }): Promise<void>;
   ```
   
-  setCurrentScreen()
-  params
-    options: {
-        screenName: string, 
-        screenClassOverride?: string;
-    }  
+  *setCurrentScreen()*
+
+
+    | key                 | value  |
+    |---------------------|--------|
+    | screenName          | string |
+    | screenClassOverride | string |
+
   ```
   setCurrentScreen(options: { screenName: string, screenClassOverride?: string }): Promise<void>;
   ```
   
-  getAppInstanceId()
+  *getAppInstanceId()*
   ```
   getAppInstanceId(): Promise<{appInstanceId: string}>;
   ```
   
-  resetAnalyticsData()
+  *resetAnalyticsData()*
   ```
   resetAnalyticsData(): Promise<void>;
   ```
