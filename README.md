@@ -34,18 +34,26 @@ To get started visit https://analytics.google.com.
 8. Download the google-services.json
 9. In Android Studio switch to Project view.
 10. In the Project level build.gradle add the following to dependencies
-    `classpath 'com.google.gms:google-services:4.2.0'`
+    ```
+    classpath 'com.google.gms:google-services:4.2.0'
+    ```
 11. In the App level build.gradle add the following to dependencies
-    `implementation 'com.google.firebase:firebase-core:17.0.0'`
+    ```
+    implementation 'com.google.firebase:firebase-core:17.0.0'
+    ```
 12. In the same file add the following to the bottom of the file.
-    `apply plugin: 'com.google.gms.google-services'`
+    ```
+    apply plugin: 'com.google.gms.google-services'
+    ```
 13. Sync Project
 
 * Ionic 4 notes. If you're using Ionic 4 change the following snippets above to the following
 
 11. In the App level build.gradle add the following to dependencies note the version change.
-    `implementation 'com.google.firebase:firebase-core:16.0.7'`
-    `implementation 'com.google.firebase:firebase-analytics:16.3.0'`
+    ```
+    implementation 'com.google.firebase:firebase-core:16.0.7'
+    implementation 'com.google.firebase:firebase-analytics:16.3.0'
+    ```
 
 
 ### iOS Setup
