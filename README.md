@@ -72,12 +72,12 @@ ETA 10/29/2019
 
  **logEvent()** - Events provide insight on what is happening in your app, such as user actions, system events, or errors.
 
-    Parameters
+Parameters
 
-    key | value
-    ----|-------
-    name | string
-    parameters | object
+| key | value |
+|----|---|
+| name | string |
+| parameters | object |
 
   ```javascript
   logEvent(options: { name: string, parameters: object }): Promise<void>;
@@ -85,12 +85,12 @@ ETA 10/29/2019
   
   **setUserProperty()** - User properties are attributes you define to describe segments of your user base, such as language preference or geographic location. 
 
-    Parameters
+Parameters
 
-    key | value
-    ----|------
-    name | string
-    value | string
+| key | value |
+|----|---|
+| name | string |
+| value | string |
 
   ```javascript
   setUserProperty(options: { value: string, name: string }): Promise<void>;
@@ -98,11 +98,11 @@ ETA 10/29/2019
   
   **setUserId()** - Google Analytics has a setUserID call, which allows you to store a user ID for the individual using your app.
 
-    Parameters
+Parameters
 
-    key | value
-    ----|------
-    userId | string
+| key | value |
+|----|---|
+| userId | string |
 
   ```javascript
   setUserId(options: { userId: string }): Promise<void>;
@@ -110,12 +110,12 @@ ETA 10/29/2019
   
   **setCurrentScreen()** - Google Analytics tracks screen transitions and attaches information about the current screen to events, enabling you to track metrics such as user engagement or user behavior per screen.
 
-    Parameters
+Parameters
 
-    key | value
-    ----|------
-    screenName | string
-    screenClassOverride | string
+| key | value
+|----|---|
+| screenName | string |
+| screenClassOverride | string |
 
   ```javascript
   setCurrentScreen(options: { screenName: string, screenClassOverride?: string }): Promise<void>;
