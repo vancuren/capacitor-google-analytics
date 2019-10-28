@@ -1,0 +1,50 @@
+{
+  "name": "capacitor-google-analytics",
+  "version": "0.0.2",
+  "description": "A Google/Firebase Analytics plugin for use with Capacitor Hybrid Applications",
+  "main": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rm -rf ./dist",
+    "watch": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "Russell L. Van Curen",
+  "license": "MIT",
+  "dependencies": {
+    "@capacitor/core": "latest",
+    "firebase": "^7.2.2"
+  },
+  "devDependencies": {
+    "typescript": "^3.2.4",
+    "@capacitor/ios": "latest",
+    "@capacitor/android": "latest"
+  },
+  "files": [
+    "dist/",
+    "ios/",
+    "android/",
+    "CapacitorGoogleAnalytics.podspec"
+  ],
+  "keywords": [
+    "capacitor",
+    "plugin",
+    "native"
+  ],
+  "capacitor": {
+    "ios": {
+      "src": "ios"
+    },
+    "android": {
+      "src": "android"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vancuren/capacitor-google-analytics.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vancuren/capacitor-google-analytics.git/issues"
+  }
+}
