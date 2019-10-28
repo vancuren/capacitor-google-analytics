@@ -10,6 +10,18 @@ A special thanks to philmerrell as a starting point for this plugin. It appears 
 
 Currently compatible with Android. Will be compatible with iOS and Web/PWA on or about 10/29/2019.
 
+#### Android
+
+Production
+
+#### iOS
+
+Testing
+
+#### Web/PWA
+
+Testing
+
 ## Getting Started
 
 ### Create Google/Firebase Analytics Account
@@ -74,10 +86,10 @@ ETA 10/29/2019
 
 Parameters
 
-| key | value |
-|----|---|
-| name | string |
-| parameters | object |
+| key | value | example |
+|----|---|---|
+| name | string | 'goal_completion' |
+| parameters | object | { name: 'lever_puzzle'} |
 
   ```javascript
   logEvent(options: { name: string, parameters: object }): Promise<void>;
@@ -87,10 +99,10 @@ Parameters
 
 Parameters
 
-| key | value |
-|----|---|
-| name | string |
-| value | string |
+| key | value | example |
+|----|---|---|
+| name | string | favorite_food |
+| value | string | 'apples' |
 
   ```javascript
   setUserProperty(options: { value: string, name: string }): Promise<void>;
@@ -100,9 +112,9 @@ Parameters
 
 Parameters
 
-| key | value |
-|----|---|
-| userId | string |
+| key | value | example |
+|----|---|---|
+| userId | string | '123456' |
 
   ```javascript
   setUserId(options: { userId: string }): Promise<void>;
@@ -112,10 +124,10 @@ Parameters
 
 Parameters
 
-| key | value
-|----|---|
-| screenName | string |
-| screenClassOverride | string |
+| key | value | example |
+|----|---|---|
+| screenName | string | 'login' |
+| screenClassOverride | string | null |
 
   ```javascript
   setCurrentScreen(options: { screenName: string, screenClassOverride?: string }): Promise<void>;
