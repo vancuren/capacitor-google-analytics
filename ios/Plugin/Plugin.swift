@@ -18,10 +18,10 @@ public class CapacitorGoogleAnalytics: CAPPlugin {
         }
     }
     
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
+    @objc func initializeApp(_ call: CAPPluginCall) {
+        let value = call.getObject("config") ?? ""
         call.success([
-            "value": value
+            "app": value
         ])
     }
 

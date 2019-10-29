@@ -1,9 +1,7 @@
 import { WebPlugin } from '@capacitor/core';
 import { CapacitorGoogleAnalyticsPlugin } from './definitions';
-import * as firebase from 'firebase/app';
 import 'firebase/analytics';
 export declare class CapacitorGoogleAnalyticsWeb extends WebPlugin implements CapacitorGoogleAnalyticsPlugin {
-    analytics: firebase.analytics.Analytics;
     constructor();
     echo(options: {
         value: string;

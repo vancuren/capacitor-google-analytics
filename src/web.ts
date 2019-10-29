@@ -12,16 +12,9 @@ export class CapacitorGoogleAnalyticsWeb extends WebPlugin implements CapacitorG
     });
   }
 
-
-  async echo(options: { value: string }): Promise<{value: string}> {
-    console.log('ECHO', options);
-    return options;
-  }
-  
-  async initializeApp(config: any): Promise<{value: string}> {
-    firebase.initializeApp(config);
-    const value = 'isEnabled';
-    return Promise.resolve({value: value});
+  initializeApp(options: { config: any }): Promise<{app: any}> {
+    const app = firebase.initializeApp(options.config);
+    return Promise.resolve({app: app});
   }
   
 

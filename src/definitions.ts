@@ -5,8 +5,7 @@ declare module "@capacitor/core" {
 }
 
 export interface CapacitorGoogleAnalyticsPlugin {
-  echo(options: { value: string }): Promise<{value: string}>;
-  initializeApp(config: any): Promise<{value: string}>;
+  initializeApp(options: { config: any }): Promise<{app: string}>;
   logEvent(options: { name: string, parameters: object }): Promise<void>;
   setUserProperty(options: { value: string, name: string }): Promise<void>;
   setUserId(options: { userId: string }): Promise<void>;

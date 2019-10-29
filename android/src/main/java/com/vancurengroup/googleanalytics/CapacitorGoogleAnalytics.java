@@ -30,14 +30,16 @@ public class CapacitorGoogleAnalytics extends Plugin {
         firebaseAnalytics = FirebaseAnalytics.getInstance(getContext());
     }
 
-    // ! Used for debugging remove before production
     @PluginMethod()
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
-
+    public void initializeApp(PluginCall call) {
+      try {
+        final String config = call.getString("config");
         JSObject ret = new JSObject();
-        ret.put("value", value);
+        ret.put("app", config);
         call.success(ret);
+      } catch (Exception e) {
+        call.reject(e.getLocalizedMessage(), e);
+      }
     }
 
     // Get App Instance ID
