@@ -1,12 +1,3 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import { WebPlugin } from '@capacitor/core';
 import * as firebase from 'firebase/app';
 import 'firebase/analytics';
@@ -17,18 +8,9 @@ export class CapacitorGoogleAnalyticsWeb extends WebPlugin {
             platforms: ['web']
         });
     }
-    echo(options) {
-        return __awaiter(this, void 0, void 0, function* () {
-            console.log('ECHO', options);
-            return options;
-        });
-    }
-    initializeApp(config) {
-        return __awaiter(this, void 0, void 0, function* () {
-            firebase.initializeApp(config);
-            const value = 'isEnabled';
-            return Promise.resolve({ value: value });
-        });
+    initializeApp(options) {
+        const app = firebase.initializeApp(options.config);
+        return Promise.resolve({ app: app });
     }
     logEvent(options) {
         if (options.name) {

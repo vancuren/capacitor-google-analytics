@@ -27,7 +27,7 @@ public class CapacitorGoogleAnalytics extends Plugin {
     private FirebaseAnalytics mFirebaseAnalytics;
 
     public void load() {
-        firebaseAnalytics = FirebaseAnalytics.getInstance(getContext());
+      mFirebaseAnalytics = FirebaseAnalytics.getInstance(getContext());
     }
 
     @PluginMethod()
@@ -46,7 +46,7 @@ public class CapacitorGoogleAnalytics extends Plugin {
     @PluginMethod()
     public void getAppInstanceId(PluginCall call) {
       try {
-        String appId = firebaseAnalytics.getAppInstanceId().toString();
+        String appId = mFirebaseAnalytics.getAppInstanceId().toString();
         JSObject ret = new JSObject();
         ret.put("appId", appId);
         call.success(ret);
@@ -65,7 +65,7 @@ public class CapacitorGoogleAnalytics extends Plugin {
 
         // If the userID was passed and is valid setUserId
         if (userId != null) {
-          firebaseAnalytics.setUserId(userId);
+          mFirebaseAnalytics.setUserId(userId);
           call.success();
         } else {
           call.reject("must include a userID value");
@@ -86,7 +86,7 @@ public class CapacitorGoogleAnalytics extends Plugin {
 
         if (name != null) {
             if (value != null) {
-                firebaseAnalytics.setUserProperty(name, value);
+              mFirebaseAnalytics.setUserProperty(name, value);
                 call.success();
             } else {
             call.reject("must include a value");
@@ -111,7 +111,7 @@ public class CapacitorGoogleAnalytics extends Plugin {
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    firebaseAnalytics.setCurrentScreen(getActivity(), value, overrideName);
+                  mFirebaseAnalytics.setCurrentScreen(getActivity(), value, overrideName);
                 }
             });
 
@@ -161,7 +161,7 @@ public class CapacitorGoogleAnalytics extends Plugin {
           } else {
             call.reject("key 'parameters' does not exist");
           }
-          firebaseAnalytics.logEvent(name, bundle);
+          mFirebaseAnalytics.logEvent(name, bundle);
           call.success();
         } else {
           call.reject("key 'name' does not exist");
@@ -174,7 +174,7 @@ public class CapacitorGoogleAnalytics extends Plugin {
     @PluginMethod()
     public void resetAnalyticsData(PluginCall call) {
       try {
-        firebaseAnalytics.resetAnalyticsData();
+        mFirebaseAnalytics.resetAnalyticsData();
         call.success();
       } catch (Exception e) {
         call.reject(e.getLocalizedMessage(), e);

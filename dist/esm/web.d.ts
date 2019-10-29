@@ -3,13 +3,10 @@ import { CapacitorGoogleAnalyticsPlugin } from './definitions';
 import 'firebase/analytics';
 export declare class CapacitorGoogleAnalyticsWeb extends WebPlugin implements CapacitorGoogleAnalyticsPlugin {
     constructor();
-    echo(options: {
-        value: string;
+    initializeApp(options: {
+        config: any;
     }): Promise<{
-        value: string;
-    }>;
-    initializeApp(config: any): Promise<{
-        value: string;
+        app: any;
     }>;
     logEvent(options: {
         name: string;
