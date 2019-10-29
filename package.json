@@ -1,6 +1,6 @@
 {
   "name": "capacitor-google-analytics",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A Google/Firebase Analytics plugin for use with Capacitor Hybrid Applications",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
