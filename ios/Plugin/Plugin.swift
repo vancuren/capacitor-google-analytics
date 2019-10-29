@@ -23,7 +23,7 @@ public class CapacitorGoogleAnalytics: CAPPlugin {
         call.success(["app": value])
     }
 
-    @objc func setScreenName(_ call: CAPPluginCall) {
+    @objc func setCurrentScreen(_ call: CAPPluginCall) {
         let screenName = call.getString("screenName");
         let screenClassOverride = call.getString("screenClassOverride");
         if screenName != nil {
@@ -85,7 +85,7 @@ public class CapacitorGoogleAnalytics: CAPPlugin {
         
     }
     
-    @objc func appInstanceId(_ call: CAPPluginCall) {
+    @objc func getAppInstanceId(_ call: CAPPluginCall) {
         DispatchQueue.main.async {
             let instanceId = Analytics.appInstanceID();
             call.success(["appInstanceId": instanceId])
