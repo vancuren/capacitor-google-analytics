@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { WebPlugin } from '@capacitor/core';
 import * as firebase from 'firebase/app';
+import 'firebase/analytics';
 export class CapacitorGoogleAnalyticsWeb extends WebPlugin {
     constructor() {
         super({

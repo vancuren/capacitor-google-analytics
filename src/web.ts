@@ -5,8 +5,6 @@ import 'firebase/analytics';
 
 export class CapacitorGoogleAnalyticsWeb extends WebPlugin implements CapacitorGoogleAnalyticsPlugin {
 
-  analytics = firebase.analytics();
-
   constructor() {
     super({
       name: 'CapacitorGoogleAnalytics',
@@ -32,7 +30,7 @@ export class CapacitorGoogleAnalyticsWeb extends WebPlugin implements CapacitorG
 
       const name = options.name;
       const params = options.parameters;
-      this.analytics.logEvent(name, params ? params : null);
+      firebase.analytics().logEvent(name, params ? params : null);
 
       return Promise.resolve();
     } else {
@@ -44,7 +42,7 @@ export class CapacitorGoogleAnalyticsWeb extends WebPlugin implements CapacitorG
     if (options.value && options.name) {
       const property: any = {};
       property[options.name] = options.value;
-      this.analytics.setUserProperties(property);
+      firebase.analytics().setUserProperties(property);
       return Promise.resolve();
     } else {
       return Promise.reject('must included a both name and value');
@@ -54,7 +52,7 @@ export class CapacitorGoogleAnalyticsWeb extends WebPlugin implements CapacitorG
   setUserId(options: { userId: string }) {
     if (options.userId) {
       const id = options.userId;
-      this.analytics.setUserId(id);
+      firebase.analytics().setUserId(id);
       return Promise.resolve();
     } else {
       return Promise.reject('must included a userid');
@@ -64,7 +62,7 @@ export class CapacitorGoogleAnalyticsWeb extends WebPlugin implements CapacitorG
   setCurrentScreen(options: { screenName: string, screenClassOverride: string }) {
     if (options.screenName) {
       const screen = options.screenName;
-      this.analytics.setCurrentScreen(screen);
+      firebase.analytics().setCurrentScreen(screen);
       return Promise.resolve();
     } else {
       return Promise.reject('must included a screen name');
@@ -72,13 +70,13 @@ export class CapacitorGoogleAnalyticsWeb extends WebPlugin implements CapacitorG
   }
 
   getAppInstanceId() {
-    const appID = this.analytics.app;
+    const appID = firebase.analytics().app;
     const name = appID.name;
     return Promise.resolve({ appInstanceId: name});
   }
 
   resetAnalyticsData() {
-    // this.analytics.setAnalyticsCollectionEnabled = true;
+    // firebase.analytics().setAnalyticsCollectionEnabled = true;
     return Promise.resolve();
   }  
 }
