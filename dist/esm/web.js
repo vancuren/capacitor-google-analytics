@@ -8,8 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { WebPlugin } from '@capacitor/core';
-import firebase from 'firebase/app';
-import 'firebase/analytics';
+import * as firebase from 'firebase/app';
 export class CapacitorGoogleAnalyticsWeb extends WebPlugin {
     constructor() {
         super({
@@ -22,6 +21,13 @@ export class CapacitorGoogleAnalyticsWeb extends WebPlugin {
         return __awaiter(this, void 0, void 0, function* () {
             console.log('ECHO', options);
             return options;
+        });
+    }
+    initializeApp(config) {
+        return __awaiter(this, void 0, void 0, function* () {
+            firebase.initializeApp(config);
+            const value = 'isEnabled';
+            return Promise.resolve({ value: value });
         });
     }
     logEvent(options) {

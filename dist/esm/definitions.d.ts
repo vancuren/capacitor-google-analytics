@@ -9,6 +9,9 @@ export interface CapacitorGoogleAnalyticsPlugin {
     }): Promise<{
         value: string;
     }>;
+    initializeApp(config: any): Promise<{
+        value: string;
+    }>;
     logEvent(options: {
         name: string;
         parameters: object;
