@@ -12,4 +12,5 @@
     s.dependency 'Capacitor'
     s.dependency 'Firebase'
     s.dependency 'Firebase/Core'
+    s.static_framework = true
   end
