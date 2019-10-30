@@ -18,9 +18,9 @@ public class CapacitorGoogleAnalytics: CAPPlugin {
         }
     }
     
-    @objc func initializeApp(_ call: CAPPluginCall) {
-        let value = call.getObject("config") ?? nil;
-        call.success(["app": value])
+    @objc func initializeApp(_ call: CAPPluginCall)
+    {
+        call.success(["app": "not available"]);
     }
 
     @objc func setCurrentScreen(_ call: CAPPluginCall) {

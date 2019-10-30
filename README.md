@@ -2,6 +2,8 @@
 
 A Capacitor plugin that enables the new data streams in Google Analytics and Firebase analytics.
 
+:warning: This plugin is still under development. Use at your own risk. I am actively developing it. Check back for updates or feel free to contribute.
+
 ## Special Thanks
 
 A special thanks to philmerrell as a starting point for this plugin. It appears that they are no longer able to maintain their plugin https://github.com/philmerrell/capacitor-firebase-analytics this is why I create this.
@@ -12,7 +14,7 @@ Currently compatible with Android. Will be compatible with iOS and Web/PWA on or
 
 #### Android
 
-Production
+Available - Testing
 
 #### iOS
 
